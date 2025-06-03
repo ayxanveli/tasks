@@ -1,0 +1,57 @@
+# mehsulun adlari
+alma = "alma"
+sud = "süd"
+corek = "çörək"
+
+# bos siyahi
+products = []
+
+# mehsullari elave et
+products.append(alma)
+products.append(sud)
+products.append(corek)
+
+# siyahini cap et
+print(products)
+
+# yeni mehsul elave eden funksiya yarat
+def add_product(product_list, product_name):
+    if product_name is None:
+        print("mehsul adi daxil edilmeyib.")
+    else:
+        product_list.append(product_name)
+        print("mehsul elave olundu.")
+
+# 2 mehsul elave et
+add_product(products, "ananas")
+add_product(products, "qarpiz")
+
+# netice
+print("siyahı:", products)
+
+# siyahidan son mehsulu sil
+def remove_product(product_list):
+   if not product_list:
+      print("siyahi bosdur, silmek mumkun deyil.")
+   else:
+      product_list.pop()
+      print("son mehsul silindi.")
+
+# 1 mehsul silmek
+remove_product(products)
+
+# netice
+print("yenilenmis siyahi:", products)
+
+# mehsul adi sorus
+new_product = input("bir yeni mehsul adi daxil etmek: ")
+
+# bosdursa xeberdarliq et, eks halda elave et
+if new_product.strip() == "":
+    print("mehsul daxil edilmedi.")
+else:
+    products.append(new_product)
+    print("istifadeci mehsulu elave etdi.")
+
+# yekun siyahini cap et
+print("son siyahi:", products)
